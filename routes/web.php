@@ -29,6 +29,8 @@ Route::get('customer/hapus/{id}', 'Customer@hapus');
 
 Route::post('customer/perbarui', 'Customer@perbarui');
 
+Route::get('customer/cari', 'Customer@cari');
+
 
 //----- S U P P L I E R ----------
 
@@ -44,6 +46,8 @@ Route::get('supplier/hapus/{id}', 'Supplier@hapus');
 
 Route::post('supplier/perbarui', 'Supplier@perbarui');
 
+Route::get('supplier/cari', 'Supplier@cari');
+
 
 //----- B A R A N G ----------
 
@@ -58,3 +62,5 @@ Route::get('barang/pilih/{id}', 'Barang@pilih');
 Route::get('barang/hapus/{id}', 'Barang@hapus');
 
 Route::post('barang/perbarui', 'Barang@perbarui');
+
+Route::get('barang/cari', 'Barang@cari');

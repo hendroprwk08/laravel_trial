@@ -16,6 +16,18 @@ class Customer extends Controller
         return view( 'customer/tabel', [ 'title' => 'Data Customer', 'data' => $data ]); 
     }
     
+    public function cari( Request $request )
+    {
+        $cari = $request->get('cari');
+        
+       //pake pagination
+        $data = DB::table( 'customer' )
+                    ->where( 'namacustomer', 'like', "%". $cari ."%" )
+                    ->paginate(5);
+        
+        return view( 'customer/tabel', [ 'title' => 'Data Supplier', 'data' => $data ]); 
+    }
+    
     public function form()
     {
         return view('customer/form', [ 'title' => 'Input Customer' ]);

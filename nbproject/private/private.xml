@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/laravel_trial/resources/views/customer/form.blade.php</file>
+            <file>file:/D:/xampp/htdocs/laravel_trial/resources/views/barang/tabel.blade.php</file>
+            <file>file:/D:/xampp/htdocs/laravel_trial/app/Http/Controllers/Barang.php</file>
+            <file>file:/D:/xampp/htdocs/laravel_trial/resources/views/barang/form.blade.php</file>
+            <file>file:/D:/xampp/htdocs/laravel_trial/config/app.php</file>
             <file>file:/D:/xampp/htdocs/laravel_trial/routes/web.php</file>
-            <file>file:/D:/xampp/htdocs/laravel_trial/app/Http/Controllers/Customer.php</file>
+            <file>file:/D:/xampp/htdocs/laravel_trial/resources/views/template/header.blade.php</file>
+            <file>file:/D:/xampp/htdocs/laravel_trial/resources/views/barang/edit.blade.php</file>
         </group>
     </open-files>
 </project-private>

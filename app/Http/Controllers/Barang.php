@@ -10,8 +10,20 @@ class Barang extends Controller
     {
         //$customer = DB::table( 'customer' )->get();
         
-       //pake pagination
-       $data = DB::table( 'vbarangsupplier' )->paginate(5);
+        //pake pagination
+        $data = DB::table( 'vbarangsupplier' )->paginate(5);
+        
+        return view( 'barang/tabel', [ 'title' => 'Data Barang', 'data' => $data ]); 
+    }
+    
+    public function cari(Request $request)
+    {
+        $cari = $request->get('cari');
+                
+        //pake pagination
+        $data = DB::table( 'vbarangsupplier' )
+                    ->where( 'namabarang', 'like', "%". $cari ."%" )
+                    ->paginate(5);
         
         return view( 'barang/tabel', [ 'title' => 'Data Barang', 'data' => $data ]); 
     }

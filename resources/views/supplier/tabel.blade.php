@@ -1,5 +1,11 @@
 @include('../template/header')
 <p><a href ="{{ url ( '/supplier/form' ) }}">+ Tambah</a></p>
+
+<form action="{{ url( 'supplier/cari' ) }}" method="get"/>
+    <input type="text" name="cari" value="{{ old('cari') }}" placeholder="Pencarian..."/>    
+    <input type="submit" value="Cari"/>    
+</form></br>
+
 <table border ="1"style="border-collapse: collapse">
     <tr>
         <td>ID</td>

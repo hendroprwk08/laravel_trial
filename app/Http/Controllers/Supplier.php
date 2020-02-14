@@ -16,6 +16,18 @@ class Supplier extends Controller
         return view( 'supplier/tabel', [ 'title' => 'Data Supplier', 'data' => $data ]); 
     }
     
+    public function cari( Request $request )
+    {
+        $cari = $request->get('cari');
+        
+       //pake pagination
+        $data = DB::table( 'supplier' )
+                    ->where( 'namasupplier', 'like', "%". $cari ."%" )
+                    ->paginate(5);
+        
+        return view( 'supplier/tabel', [ 'title' => 'Data Supplier', 'data' => $data ]); 
+    }
+    
     public function form()
     {
         return view('supplier/form', [ 'title' => 'Input Supplier' ]);
