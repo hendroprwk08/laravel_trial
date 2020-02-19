@@ -20,7 +20,9 @@ class Supplier extends Controller
     {
         $cari = $request->get('cari');
         
-       //pake pagination
+        $request->session()->put( 'cari', $cari );
+         
+        //pake pagination
         $data = DB::table( 'supplier' )
                     ->where( 'namasupplier', 'like', "%". $cari ."%" )
                     ->paginate(5);

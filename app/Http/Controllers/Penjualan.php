@@ -4,37 +4,42 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class Barang extends Controller
+class Penjualan extends Controller
 {
     public function index()
     {
         //$customer = DB::table( 'customer' )->get();
         
         //pake pagination
-        $data = DB::table( 'vbarangsupplier' )->paginate(5);
+        $data = DB::table( 'vjual' )->paginate(5);
         
-        return view( 'barang/tabel', [ 'title' => 'Data Barang', 'data' => $data ]); 
+        return view( 'penjualan/tabel', [ 'title' => 'Data Penjualan', 'data' => $data ]); 
     }
     
+    public function gen_faktur()
+    {
+        
+    }
+          
     public function cari(Request $request)
     {
         $cari = $request->cari;
         
-         $request->session()->put( 'cari', $cari );
-                
+        $request->session()->put( 'cari', $cari );
+        
         //pake pagination
-        $data = DB::table( 'vbarangsupplier' )
-                    ->where( 'namabarang', 'like', "%". $cari ."%" )
+        $data = DB::table( 'vjual' )
+                    ->where( 'namacustomer', 'like', "%". $cari ."%" )
                     ->paginate(5);
         
-        return view( 'barang/tabel', [ 'title' => 'Data Barang', 'data' => $data ]); 
+        return view( 'penjualan/tabel', [ 'title' => 'Data Penjualan', 'data' => $data ]); 
     }
     
     public function form()
     {
-        $data = DB::table( 'supplier' )->get();
+        $data = DB::table( 'customer' )->get();
        
-        return view('barang/form', [ 'title' => 'Input Barang', 'data' => $data ]);
+        return view('penjualan/form', [ 'title' => 'Pilih Customer', 'data' => $data ]);
     }
     
     public function simpan(Request $request)

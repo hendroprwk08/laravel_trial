@@ -64,3 +64,20 @@ Route::get('barang/hapus/{id}', 'Barang@hapus');
 Route::post('barang/perbarui', 'Barang@perbarui');
 
 Route::get('barang/cari', 'Barang@cari');
+
+
+//----- P E N J U A L A N ----------
+
+Route::get('penjualan', 'Penjualan@index');
+
+Route::get('penjualan/form', 'Penjualan@form');
+
+Route::post('penjualan/simpan', 'Penjualan@simpan');
+
+Route::get('penjualan/pilih/{id}', 'Penjualan@pilih');
+
+Route::get('penjualan/hapus/{id}', 'Penjualan@hapus');
+
+Route::post('penjualan/perbarui', 'Penjualan@perbarui');
+
+Route::get('penjualan/cari', 'Penjualan@cari');

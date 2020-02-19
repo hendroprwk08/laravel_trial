@@ -2,7 +2,7 @@
 <p><a href ="{{ url ( '/supplier/form' ) }}">+ Tambah</a></p>
 
 <form action="{{ url( 'supplier/cari' ) }}" method="get"/>
-    <input type="text" name="cari" value="{{ old('cari') }}" placeholder="Pencarian..."/>    
+    <input type="text" name="cari" value="{{ session()->get( 'cari' ) }}" placeholder="Pencarian..."/>    
     <input type="submit" value="Cari"/>    
 </form></br>
 

@@ -19,7 +19,9 @@ class Customer extends Controller
     public function cari( Request $request )
     {
         $cari = $request->get('cari');
-        
+     
+        $request->session()->put( 'cari', $cari );
+         
        //pake pagination
         $data = DB::table( 'customer' )
                     ->where( 'namacustomer', 'like', "%". $cari ."%" )
