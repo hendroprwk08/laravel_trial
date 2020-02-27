@@ -72,6 +72,10 @@ Route::get('penjualan', 'Penjualan@index');
 
 Route::get('penjualan/form', 'Penjualan@form');
 
+Route::post('penjualan/barang', 'Penjualan@barang');
+
+Route::get('penjualan/tabel_barang', 'Penjualan@tabel_barang');
+
 Route::post('penjualan/simpan', 'Penjualan@simpan');
 
 Route::get('penjualan/pilih/{id}', 'Penjualan@pilih');

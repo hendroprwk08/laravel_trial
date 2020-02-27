@@ -1,4 +1,5 @@
 @include('../template/header')
+
 <p><a href ="{{ url ( '/penjualan/form' ) }}">+ Tambah</a></p>
 
 <form action="{{ url( 'penjualan/cari' ) }}" method="get"/>

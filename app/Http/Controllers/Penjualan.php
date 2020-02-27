@@ -17,8 +17,23 @@ class Penjualan extends Controller
     }
     
     public function gen_faktur()
-    {
+    { 
+        $query = DB::select( DB::raw ( 'SELECT faktur FROM jual WHERE year(tanggal) = "'. date('Y') .'" AND month(tanggal) = "'. date('m') .'" order by faktur desc limit 1' ) );
+        $faktur = json_decode(json_encode($query), true); //konversi ke array
         
+        $id = $faktur[0]['faktur'];
+
+        if ( empty($id) )
+        {
+            $newid = 'FJ'. date('y') .''. date( 'm' ) .'001';
+        }
+        else
+        {
+            $id = ((int)substr($id, -3) + 1 );
+            $newid = 'FJ'. date('y') .''. date( 'm' ) . sprintf( '%03d', $id );
+        }
+        
+        return $newid;
     }
           
     public function cari(Request $request)
@@ -39,7 +54,27 @@ class Penjualan extends Controller
     {
         $data = DB::table( 'customer' )->get();
        
-        return view('penjualan/form', [ 'title' => 'Pilih Customer', 'data' => $data ]);
+        return view('penjualan/form', [ 'title'  => 'Tentukan nomer faktur', 
+                                        'faktur' => $this->gen_faktur(),
+                                        'tgl'   => date('Y-m-d'),
+                                        'data'   => $data ]);
+    }
+    
+    public function barang(Request $request)
+    {
+        //set session
+        session( [ 'faktur' => $request->input('faktur'),
+                    'tanggal' => $request->input('tanggal'),
+                    'customer' => $request->input('customer') ] );
+        
+        return view('penjualan/barang', [ 'title'  => 'Pilih Barang' ]);
+    }
+    
+    public function tabel_barang()
+    {
+        $data = DB::table( 'barang' )->paginate(5);
+        
+        return view('penjualan/barang_tabel', [ 'title' => 'Data Barang', 'data'  => $data ]);
     }
     
     public function simpan(Request $request)
