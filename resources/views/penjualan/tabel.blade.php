@@ -7,7 +7,7 @@
     <input type="submit" value="Cari"/>    
 </form></br>
 
-<table border ="1"style="border-collapse: collapse">
+<table border ="1">
     <tr>
         <td>Faktur</td>
         <td>Tanggal</td>

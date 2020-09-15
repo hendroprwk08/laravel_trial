@@ -2,22 +2,7 @@
 <html>
     <title>{{ $title  }}</title>
     <head>
-        <style type="text/css">
-            body{
-                margin: 0px;
-                padding: 0px;
-            }
-            
-            .pagination li{
-                display: inline-block;
-                list-style-type: none;
-                margin: 5px;
-            }
-            
-            .footer{
-                margin-top: 50px
-            }
-        </style>
+        <link href="{{ asset('css/my_style.css') }}" rel="stylesheet">
     </head>
     <p style="background-color: #fafafa; padding: 10px; margin-top: 0px">
         <b>Menu :</b>&nbsp;&nbsp;

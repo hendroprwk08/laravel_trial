@@ -1,0 +1,18 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.pagination li{
+    display: inline-block;
+    list-style-type: none;
+    margin: 5px;
+}
+
+.footer{
+    margin-top: 50px
+}
